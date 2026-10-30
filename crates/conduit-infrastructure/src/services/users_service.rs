@@ -6,8 +6,8 @@ use conduit_core::users::repository::DynUsersRepository;
 use conduit_core::users::service::UsersService;
 use conduit_core::utils::security_service::DynSecurityService;
 use conduit_core::utils::token_service::DynTokenService;
-use conduit_domain::users::requests::{LoginUserDto, RegisterUserDto, UpdateUserDto};
 use conduit_domain::users::UserDto;
+use conduit_domain::users::requests::{LoginUserDto, RegisterUserDto, UpdateUserDto};
 
 #[derive(Clone)]
 pub struct ConduitUsersService {
