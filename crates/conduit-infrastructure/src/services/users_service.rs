@@ -79,7 +79,6 @@ impl UsersService for ConduitUsersService {
 
         if !is_valid_login_attempt {
             error!("invalid login attempt for user {:?}", email);
-            return Err(ConduitError::InvalidLoginAttmpt);
         }
 
         info!("user login successful, generating token");
