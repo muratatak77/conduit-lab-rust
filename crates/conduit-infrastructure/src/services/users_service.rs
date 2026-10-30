@@ -6,8 +6,8 @@ use conduit_core::users::repository::DynUsersRepository;
 use conduit_core::users::service::UsersService;
 use conduit_core::utils::security_service::DynSecurityService;
 use conduit_core::utils::token_service::DynTokenService;
-use conduit_domain::users::requests::{LoginUserDto, RegisterUserDto, UpdateUserDto};
 use conduit_domain::users::UserDto;
+use conduit_domain::users::requests::{LoginUserDto, RegisterUserDto, UpdateUserDto};
 
 #[derive(Clone)]
 pub struct ConduitUsersService {
@@ -79,6 +79,7 @@ impl UsersService for ConduitUsersService {
 
         if !is_valid_login_attempt {
             error!("invalid login attempt for user {:?}", email);
+            return Err(ConduitError::InvalidLoginAttmpt);
         }
 
         info!("user login successful, generating token");
